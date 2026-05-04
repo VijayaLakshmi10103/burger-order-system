@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burger Order System</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    #overlay {
+      width: 60%;
+      margin: 40px auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea,
+    input[list] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="range"] {
+      width: 60%;
+      margin: 0 10px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff4c4c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      #overlay {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="overlay">
+
+    <form action="second.html">
+      <h1>🍔 Create Your Burger</h1>
+
+      <section>
+        <label>Protein Type</label>
+        <input type="text" name="patty" placeholder="Chicken / Veg" required>
+      </section>
+
+      <hr>
+
+      <section>
+        <label>Number of Patties</label>
+        <input type="number" name="amount" min="1" max="5" required>
+      </section>
+
+      <hr>
+
+      <section>
+        <label>Cooking Level</label>
+        Rare
+        <input type="range" name="doneness" min="1" max="5" value="3">
+        Well-Done
+      </section>
+
+      <hr>
+
+      <section>
+        <b>Toppings</b><br>
+        <input type="checkbox" name="topping[]" value="lettuce"> Lettuce
+        <input type="checkbox" name="topping[]" value="tomato"> Tomato
+        <input type="checkbox" name="topping[]" value="onion"> Onion
+      </section>
+
+      <hr>
+
+      <section>
+        <b>Add Cheese?</b><br>
+        <input type="radio" name="cheese" value="yes" checked> Yes
+        <input type="radio" name="cheese" value="no"> No
+      </section>
+
+      <hr>
+
+      <section>
+        <label>Bun Type</label>
+        <select name="bun">
+          <option value="sesame">Sesame</option>
+          <option value="potato">Potato</option>
+          <option value="pretzel">Pretzel</option>
+        </select>
+      </section>
+
+      <hr>
+
+      <section>
+        <label>Sauce</label>
+        <input list="sauces" name="sauce">
+        <datalist id="sauces">
+          <option value="Ketchup">
+          <option value="Mayo">
+          <option value="Mustard">
+        </datalist>
+      </section>
+
+      <hr>
+
+      <section>
+        <label>Extra Instructions</label>
+        <textarea name="extra" rows="3"></textarea>
+      </section>
+
+      <hr>
+
+      <section>
+        <input type="submit" value="Submit Order">
+      </section>
+
+    </form>
+  </section>
+
+</body>
+</html>
